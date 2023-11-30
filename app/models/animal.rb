@@ -1,5 +1,6 @@
 class Animal < ApplicationRecord
     has_many :sightings
+    accepts_nested_attributes_for :sightings
     validates :name, :binomial, presence: true
     validate :name_does_not_match_binomial
     validates :name, :binomial, uniqueness: true
